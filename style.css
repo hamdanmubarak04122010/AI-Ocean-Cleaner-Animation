@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #87ceeb;
+  font-family: sans-serif;
+}
+
+.controls {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 90vw;
+}
+
+.controls button {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.info {
+  margin-top: 5px;
+}
+
+.log {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255,255,255,0.85);
+  padding: 10px;
+  max-height: 150px;
+  width: 90vw;
+  max-width: 300px;
+  overflow-y: auto;
+  border-radius: 10px;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.ocean {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, #006994 60%, #87ceeb 100%);
+  overflow: hidden;
+}
+
+.drone, .trash, .fish {
+  position: absolute;
+  font-size: 8vw;
+  transition: all 1s ease;
+}
+
+.trash {
+  animation: float 3s infinite ease-in-out;
+}
+
+.fish {
+  animation: swim 10s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes swim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+@media (max-width: 600px) {
+  .controls, .log {
+    font-size: 14px;
+  }
+
+  .drone, .trash, .fish {
+    font-size: 12vw;
+  }
+}
